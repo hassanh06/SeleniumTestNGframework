@@ -75,7 +75,7 @@ public abstract class TestBase {
 
 				//initialize config properties file
 				config = new Properties();
-				String config_fileName = "config.properties";
+				String config_fileName = "config_dev.properties";
 				String config_path = System.getProperty("user.dir") + File.separator+ "config" + File.separator + config_fileName;
 				FileInputStream config_ip = new FileInputStream(config_path);
 				config.load(config_ip);
@@ -83,7 +83,7 @@ public abstract class TestBase {
 
 				//initialize data properties file
 				data = new Properties();
-				String data_fileName = "data.properties";
+				String data_fileName = "data_dev.properties";
 				String data_path = System.getProperty("user.dir") + File.separator+ "config" + File.separator + data_fileName;
 				FileInputStream data_ip = new FileInputStream(data_path);
 				data.load(data_ip);
@@ -134,7 +134,7 @@ public abstract class TestBase {
 		}
 		else if (config.getProperty("browser").equals("GoogleChrome")||config.getProperty("browser").equalsIgnoreCase("CHROME")){
 
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+ File.separator +"drivers"+ File.separator +"chromedriver");
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+ File.separator +"drivers"+ File.separator +"chromedriver.exe");
 			// To remove message "You are using an unsupported command-line flag: --ignore-certificate-errors.
 			// Stability and security will suffer."
 			// Add an argument 'test-type'
